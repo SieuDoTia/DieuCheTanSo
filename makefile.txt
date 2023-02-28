@@ -1,0 +1,18 @@
+CC=clang
+
+danhSach = DieuCheTanSo.o LuuAmThanhWAV.o
+
+dieuCheTanSo: $(danhSach)
+	$(CC) -o dieuCheTanSo -lz -lm $(danhSach)
+
+# ====
+DieuCheTanSo.o: DieuCheTanSo.c
+	$(CC) -c DieuCheTanSo.c
+
+LuuAmThanhWAV.o: LuuAmThanhWAV.c LuuAmThanhWAV.h
+	$(CC) -c LuuAmThanhWAV.c
+
+
+# ==== LÀM SẠCH
+clean:	
+	rm $(danhSach)
